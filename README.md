@@ -73,14 +73,4 @@ To test the Hospital Management System, follow these steps:
 
 Please note that additional unit tests and integration tests can be added to the project to ensure comprehensive testing coverage.
 
-## Screenshots
-
-### Login Screen
-![Login](images/Login.png)
-
-### Patient Form
-![Patient Form](images/Patient%20Form.png)
-
-### Room Details
-![Room](images/Room.png)
 
