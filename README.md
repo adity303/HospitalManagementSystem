@@ -72,3 +72,15 @@ To test the Hospital Management System, follow these steps:
 5. Test the "Back" button functionality in the `Room` screen.
 
 Please note that additional unit tests and integration tests can be added to the project to ensure comprehensive testing coverage.
+
+## Screenshots
+
+### Login Screen
+![Login](images/Login.png)
+
+### Patient Form
+![Patient Form](images/Patient%20Form.png)
+
+### Room Details
+![Room](images/Room.png)
+
