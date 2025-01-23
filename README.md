@@ -74,3 +74,9 @@ To test the Hospital Management System, follow these steps:
 Please note that additional unit tests and integration tests can be added to the project to ensure comprehensive testing coverage.
 
 
+![Image](https://github.com/user-attachments/assets/cecdbb91-b1fc-4160-a234-0172bdfe6bdd)
+
+![Image](https://github.com/user-attachments/assets/e8a95fd2-3527-4f1f-9376-ff25ffcfc45a)
+
+![Image](https://github.com/user-attachments/assets/0e665828-4fc7-4ff6-b0a0-ce5f627830aa)
+
