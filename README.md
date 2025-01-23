@@ -1,88 +1,74 @@
-README File for Hospital Management System Login Module
-Project Overview
-This project is a Login Module for a Hospital Management System, implemented in Java using the Swing framework. The application provides a graphical interface for user authentication by validating credentials from a database.
+# Hospital Management System
 
-Key Features
-Graphical User Interface (GUI): A user-friendly login interface built with JFrame and Swing components.
-Credential Validation: Verifies username and password against stored database credentials.
-Database Integration: Retrieves user details using SQL queries.
-Secure Password Handling: Uses JPasswordField for masking password input.
-Navigation Support: Redirects to the reception dashboard (Reception class) upon successful login.
-Error Handling: Displays appropriate error messages for invalid login attempts.
-Exit Option: Includes a Cancel button to close the application gracefully.
-How It Works
-Login Screen:
+## Installation
 
-// For Login Page:
-Enter Username and Password in the respective fields.
-Click Login to authenticate credentials.
-If valid, the application navigates to the reception dashboard.
-If invalid, displays an "Invalid" error message.
-Use Cancel to terminate the application.
-Database Integration:
+1. Ensure you have Java Development Kit (JDK) installed on your system.
+2. Clone the repository or download the source code files.
+3. Open the project in your preferred Java IDE (e.g., IntelliJ IDEA, Eclipse, or NetBeans).
+4. Build the project and resolve any dependencies.
+5. Ensure you have a MySQL database server running on your local machine or a remote server.
+6. Update the database connection details in the `conn.java` file to match your environment.
 
-Executes a query against the login table with the input credentials.
-Assumes the existence of a conn class handling database connectivity.
-How to Run the Project
-Clone the repository or copy the code to your local machine.
-Ensure you have Java installed and set up.
-Configure the conn class for database connectivity.
-Set up the database table login with columns ID and PW.
-Provide the correct database credentials in the conn class.
-Compile and run the Login class:
-bash
-Copy
-Edit
-javac Login.java
-java hospital.management.system.Login
-Requirements
-Java Development Kit (JDK): Version 8 or higher.
-Database: MySQL or any other compatible database.
-Swing Library: Bundled with JDK.
-Code Highlights
-GUI Components:
+## Usage
 
-JTextField and JPasswordField for user input.
-JLabel for labels and icons.
-JButton for login and cancel actions.
-Event Handling:
+1. Run the `Login.java` file to launch the Hospital Management System application.
+2. Enter the username and password to log in.
+   - The default username is `adisri` and the password is `234567`.
+3. The main `Reception` screen will be displayed, providing access to various functionalities:
+   - Add New Patient
+   - Room Management
+   - Department Management
+   - Employee Information
+   - Patient Information
+   - Patient Discharge
+   - Update Patient Details
+   - Hospital Ambulance
+   - Room Search
+   - Logout
 
-Implements ActionListener to manage button clicks.
-SQL Query Execution:
+## API
 
-Retrieves user data using SELECT statements.
-Basic SQL query:
-sql
-Copy
-Edit
-SELECT * FROM login WHERE ID = 'username' AND PW = 'password';
-Security Note:
+The Hospital Management System utilizes the following Java classes and their methods:
 
-The current implementation uses raw SQL queries, which are vulnerable to SQL Injection. It is recommended to use Prepared Statements for enhanced security.
-Future Enhancements
-Implement password hashing for secure credential storage.
-Replace raw SQL queries with Prepared Statements.
-Add validation for empty fields and username/password formats.
-Enhance UI with modern libraries like JavaFX.
-Implement error logging for better debugging.
-Important Points from the Code
-Database Connection Dependency:
+1. `conn.java`:
+   - `Connection connection`: Establishes a connection to the MySQL database.
+   - `Statement statement`: Executes SQL queries.
 
-Ensure the conn class is correctly implemented for database connectivity.
-Event Handling:
+2. `DbUtils.java`:
+   - This class is currently empty and can be used to define utility methods or enums related to the database.
 
-Buttons (Login, Cancel) are configured with appropriate actions using the actionPerformed method.
-Field Access and Formatting:
+3. `jButton.java`:
+   - `jButton(String login)`: Constructs a new JButton with the specified label.
 
-JTextField and JPasswordField styling ensures better user experience.
-Font and Color settings make the interface visually appealing.
-Icon Usage:
+4. `Login.java`:
+   - `actionPerformed(ActionEvent e)`: Handles the login process and opens the `Reception` screen upon successful authentication.
 
-An image icon is included for a professional look (icon/Login.png).
-Application Flow:
+5. `New_Patient.java`:
+   - `actionPerformed(ActionEvent e)`: Handles the creation of a new patient record and updates the room availability in the database.
 
-Successful login navigates to the Reception screen.
-Invalid login triggers an error message.
-Graceful Exit:
+6. `Reception.java`:
+   - This class sets up the main user interface for the Hospital Management System, providing access to various functionalities through buttons.
 
-The Cancel button closes the application with an exit code.
+7. `Room.java`:
+   - Displays a table of available rooms, their availability, price, and bed type.
+   - Provides a "Back" button to navigate back to the previous screen.
+
+## Contributing
+
+Contributions to the Hospital Management System project are welcome. If you find any issues or have suggestions for improvements, please create a new issue or submit a pull request on the project's GitHub repository.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Testing
+
+To test the Hospital Management System, follow these steps:
+
+1. Run the `Login.java` file and verify that the login functionality works correctly with the default credentials.
+2. Test the various functionalities accessible from the `Reception` screen, such as adding a new patient, managing rooms, and accessing patient/employee information.
+3. Ensure that the data is properly stored and retrieved from the MySQL database.
+4. Verify that the room availability is updated correctly when a new patient is added.
+5. Test the "Back" button functionality in the `Room` screen.
+
+Please note that additional unit tests and integration tests can be added to the project to ensure comprehensive testing coverage.
